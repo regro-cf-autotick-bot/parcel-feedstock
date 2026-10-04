@@ -14,7 +14,7 @@ source:
     - fix-setup.patch
 
 build:
-  number: 1
+  number: 2
   # does not support python 3 and windows
   skip: true  # [py3k or win]
   script: make && python setup.py install --single-version-externally-managed --record record.txt
@@ -23,6 +23,7 @@ requirements:
   build:
     - make
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
   host:
     - python
